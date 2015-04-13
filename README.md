@@ -3,8 +3,9 @@
 ## Set up
 
 Make sure you install node.js. You can read more about how to do this with NVM
-[here](https://github.com/creationix/nvm#install-script). Clone this repository,
-then run `npm install`.
+[here](https://github.com/creationix/nvm#install-script). You'll know when this
+is working when you can enter the node.js console by typing `node`. Clone this
+repository, then run `npm install`.
 
 ## Testing
 
