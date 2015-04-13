@@ -26,4 +26,4 @@ I've included a script to help you get started. Just type `npm run sandbox`.
 
 ## Problems
 
-You can find a description of each problem [here](./problems).
+You can find a description of each problem [here](./problems.md).
