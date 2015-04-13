@@ -93,15 +93,17 @@ groupBy([1, 2, 3, 4, 5], parity);
 ```
 
 This ends the first part! If you want a challenge, try rewriting problems 1
-through 4 using the function in next problem's solution. So, try to rewrite
-problem 1 by using the function you wrote in problem 2. You can use another
-function like this:
+through 4 using a function in another problem's solution. So, try to rewrite
+problem 1 by using one of the functions you wrote in problems 2-5. You can use
+another function like this:
 
 ```js
 // In lib/1-count.js
-var countEq = require('./2-countEq.js');
+var countPred = require('./3-countPred.js');
 
-countEq(...);
+module.exports = function(arr) {
+  countPred(...);
+};
 ```
 
 ## 6. Unique
