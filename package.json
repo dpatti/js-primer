@@ -11,7 +11,8 @@
     "mocha": "^2.2.4"
   },
   "scripts": {
-    "test": "mocha test/index.js"
+    "test": "mocha test/index.js",
+    "sandbox": "node --require ./sandbox.js"
   },
   "author": "",
   "license": "MIT"

@@ -29,6 +29,10 @@ it('works with a heavy second set', function(){
   expect(union([1], [1, 2, 3])).to.eql([1, 2, 3]);
 });
 
+it('works with duplicates in sets', function(){
+  expect(union([1, 1], [2, 2])).to.eql([1, 2]);
+});
+
 it('works with mixed values', function(){
   expect(union([1, 'a', true], [true, 'a', 1])).to.eql([1, 'a', true]);
 });
@@ -36,4 +40,9 @@ it('works with mixed values', function(){
 it('considers object equality', function(){
   var obj = {};
   expect(union([obj, {}], [{}, obj])).to.eql([{}, {}, {}]);
+});
+
+it('returns a new array', function(){
+  var input = [1, 2, 3];
+  expect(union(input, input)).to.not.equal(input);
 });

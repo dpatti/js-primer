@@ -21,3 +21,8 @@ it('considers object equality', function(){
   var obj = {};
   expect(uniq([obj, {}, obj])).to.eql([{}, {}]);
 });
+
+it('returns a new array', function(){
+  var input = [1, 2, 3];
+  expect(uniq(input)).to.not.equal(input);
+});

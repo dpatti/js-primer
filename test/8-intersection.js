@@ -16,3 +16,8 @@ it('does not coerce values', function(){
 it('does not include duplicate values', function(){
   expect(intersection([1, 1, 1], [1])).to.eql([1]);
 });
+
+it('returns a new array', function(){
+  var input = [1, 2, 3];
+  expect(intersection(input, input)).to.not.equal(input);
+});

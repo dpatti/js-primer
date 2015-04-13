@@ -20,3 +20,10 @@ The first library file has been provided as an example, but you must create the
 rest. Start by completeing the first problem and getting all tests to pass
 before continuing on to the next. You can use the first file as a template for
 the rest.
+
+If you want to test your function specifically, you can use the node console.
+I've included a script to help you get started. Just type `npm run sandbox`.
+
+## Problems
+
+You can find a description of each problem [here](./problems).

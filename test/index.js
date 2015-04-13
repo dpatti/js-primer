@@ -1,21 +1,10 @@
 var fs = require('fs');
-
-var problems = {
-  1: 'count.js',
-  2: 'countEq.js',
-  3: 'countPred.js',
-  4: 'countBy.js',
-  5: 'groupBy.js',
-  6: 'uniq.js',
-  7: 'union.js',
-  8: 'intersection.js',
-};
-
+var problems = require('../problems');
 var notifiedSkip = false;
 
 Object.keys(problems).forEach(function(n) {
   var problem = problems[n];
-  var file = n + '-' + problem;
+  var file = n + '-' + problem + '.js';
   var slug = n + ': ' + problem + '()';
 
   var lib = './lib/' + file;
