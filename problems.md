@@ -12,12 +12,12 @@ count([1, 2, 3]);
 
 ## 2. Count occurrences
 
-Now that we can count each item in an array, let's be picky about what we can
-count. We'll expand on the last one by writing a new function `countEq(arr,
-val)`, which takes an extra argument that is a single value and returns the
-number of times that value occurs in the array.  Remember, JavaScript can be
-tricky about what "equals" means. For example, `0` the number is not the same as
-`"0"` the string.
+Now that we can count each item in an array, let's be picky about what we want
+to count. We'll expand on the last problem by writing a new function
+`countEq(arr, val)`, which takes an extra argument that is a single value and
+returns the number of times that value occurs in the array.  Remember,
+JavaScript can be tricky about what "equals" means. For example, we don't want
+to consier `0` the number to be the same as `"0"` the string.
 
 ```js
 countEq([1, 2, 2, 3], 2);
@@ -44,11 +44,12 @@ countPred([1, 2, 3, 4], isEven);
 ## 4. Count by groups
 
 Let's get fancy. Instead of using this function to only count elements for which
-it is `true`, we can have the function return a group. Then, we can attribute
-each element in the array to a group and count how many there are total. Write a
-function `countBy(arr, fn)` that returns an **object** where each key is a group
-and each value is the number of elements belonging to that group. If the grouper
-function returns `undefined`, the element should not be counted.
+it is `true`, we can have the function return a "group" name. Then, we can
+attribute each element in the array to a group and count how many elements each
+group has. Write a function `countBy(arr, fn)` that returns an **object** where
+each key is a group name and each value is the number of elements belonging to
+that group. If the grouper function returns `undefined`, the element should be
+skipped.
 
 ```js
 var parity = function(i) {
@@ -68,11 +69,12 @@ countBy([1, 2, 3, 4, 5], parity);
 
 ## 5. Group by groups
 
-This is a slight modification of our last question. We still take an array and a
+This is a slight modification of our last problem. We still take an array and a
 function that gives us a group, but this time, we don't want to count the number
 of elements in that group, we want to list them. Write a function `groupBy(arr,
 fn)` that returns an object where each key is a group and each value is an array
-of elements belonging to that group.
+of elements belonging to that group. If the grouper function returns
+`undefined`, the element should be skipped.
 
 ```js
 var parity = function(i) {
@@ -91,9 +93,9 @@ groupBy([1, 2, 3, 4, 5], parity);
 ```
 
 This ends the first part! If you want a challenge, try rewriting problems 1
-through 4 using only the next problem's solution. So, try to rewrite problem 1
-using the function you wrote in problem 2. You can use another function like
-this:
+through 4 using the function in next problem's solution. So, try to rewrite
+problem 1 by using the function you wrote in problem 2. You can use another
+function like this:
 
 ```js
 // In lib/1-count.js
@@ -125,8 +127,8 @@ a function `union(arr1, arr2)` that takes two arrays and returns a single array
 as a set that is the union of the two inputs.
 
 ```js
-union([1, 2, 3], [3, 4, 5]);
-// => [1, 2, 3, 4, 5]
+union([1, 2, 3], [2, 3, 4]);
+// => [1, 2, 3, 4]
 ```
 
 ## 8. Intersection
@@ -134,8 +136,8 @@ union([1, 2, 3], [3, 4, 5]);
 We're going to combine two sets again, but instead of taking the union, we want
 to take the intersection. That is, the set that we return only contains elements
 that exist in both sets. Write a function `intersection(arr1, arr2)` that takes
-two arrays and returns a single array as a set that is the union of the two
-inputs.
+two arrays and returns a single array as a set that is the intersection of the
+two inputs.
 
 ```js
 intersection([1, 2, 3], [2, 3, 4]);
