@@ -145,3 +145,83 @@ two inputs.
 intersection([1, 2, 3], [2, 3, 4]);
 // => [2, 3]
 ```
+
+## 9. Pick
+
+It's time to revisit objects a bit more in depth. We're going to start with a
+function that lets us take an object and narrow it down to only a few
+properties that we care about. We'll call the function `pick(obj, arr)` that
+takes an object as its first argument and an array of keys as the second
+argument. We want to return a new object containing only the keys in the list
+arr and their respective values from obj. The order of the keys on the object is
+not important.
+
+```js
+var me = {
+  name: "Doug",
+  age: 26,
+  gender: "male",
+  cool: false
+};
+
+pick(me, ['name', 'age']);
+// => {
+        name: "Doug",
+        age: 26
+      }
+```
+
+## A. Merge
+
+We've done a lot of iteration over arrays, but we haven't tried iterating over
+an object yet. Let's do that by writing a function that takes two objects and
+combines them into one. Specifically, `merge(obj1, obj2)` will return the same
+`obj1`, but all of the keys and values from `obj2` should be added to it. If the
+same key appears in both objects, use the value from `obj2`.
+
+```js
+var inventory = {
+  peaches: true,
+  plums: false,
+  pears: true
+};
+var shipment = {
+  plums: true,
+  harps: false
+};
+
+merge(inventory, shipment);
+// => {
+        peaches: true,
+        plums: true,
+        pears: true,
+        harps: false,
+      }
+```
+
+## B. Invert
+
+Our last problem is a simple one by concept: given an object, turn all of the
+values into keys and all of the keys into values. We'll call this `invert(obj)`,
+and it will return a new object with the inverted keys and values from `obj`.
+There are some interesting cases, though. If the value is null or undefined, we
+can skip it entirely. If there are two keys with the same value, when we invert,
+we're going to have two of the same key. In this case, use the first key we
+find.
+
+```js
+var websites = {
+  "trello.com": "trello",
+  "basilica.horse": "basilica",
+  "barnacles.blackfriday": "barnacles",
+  "trellis.coffee": "trello",
+  "trello.horse": null
+};
+
+invert(websites);
+// => {
+        trello: "trello.com",
+        basilica: "basilica.horse",
+        barnacles: "barnacles.blackfriday",
+      }
+```

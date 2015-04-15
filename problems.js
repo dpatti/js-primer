@@ -4,7 +4,12 @@ module.exports = {
   3: 'countPred',
   4: 'countBy',
   5: 'groupBy',
+
   6: 'uniq',
   7: 'union',
   8: 'intersection',
+
+  9: 'pick',
+  a: 'merge',
+  b: 'invert',
 };
