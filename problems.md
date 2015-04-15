@@ -166,9 +166,9 @@ var me = {
 
 pick(me, ['name', 'age']);
 // => {
-        name: "Doug",
-        age: 26
-      }
+//      name: "Doug",
+//      age: 26
+//    }
 ```
 
 ## A. Merge
@@ -192,11 +192,11 @@ var shipment = {
 
 merge(inventory, shipment);
 // => {
-        peaches: true,
-        plums: true,
-        pears: true,
-        harps: false,
-      }
+//      peaches: true,
+//      plums: true,
+//      pears: true,
+//      harps: false,
+//    }
 ```
 
 ## B. Invert
@@ -220,8 +220,8 @@ var websites = {
 
 invert(websites);
 // => {
-        trello: "trello.com",
-        basilica: "basilica.horse",
-        barnacles: "barnacles.blackfriday",
-      }
+//      trello: "trello.com",
+//      basilica: "basilica.horse",
+//      barnacles: "barnacles.blackfriday",
+//    }
 ```
