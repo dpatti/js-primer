@@ -1,5 +1,6 @@
 var fs = require('fs');
 var problems = require('./problems');
+var repl = require('repl');
 
 Object.keys(problems).forEach(function(n) {
   var problem = problems[n];
@@ -14,3 +15,5 @@ Object.keys(problems).forEach(function(n) {
 
   console.log("Loaded " + lib + " as " + problem + "()");
 });
+
+repl.start('> ');
