@@ -225,3 +225,97 @@ invert(websites);
 //      barnacles: "barnacles.blackfriday",
 //    }
 ```
+
+## C. Counter
+
+This is a little different. Here, we're going to write a function `counter()`
+that takes no arguments and returns `0` when you call it the first time. But,
+the next time we call it, we want it to return `1`. And then `2`. Every time the
+program restarts, it will restart at 0.
+
+```js
+counter();
+// => 0
+counter();
+// => 1
+counter();
+// => 2
+counter();
+// => 3
+```
+
+## D. Tagged Counter
+
+We'll expand on the last question by adding the ability to give some string
+"tag" to our counter function. Each tag has its own counter that starts at 0.
+We'll call this `counterFor(str)`.
+
+```js
+counterFor("JavaScript");
+// => 0
+counterFor("CoffeeScript");
+// => 0
+counterFor("CoffeeScript");
+// => 1
+counterFor("JavaScript");
+// => 1
+counterFor("CoffeeScript");
+// => 2
+counterFor("TypeScript");
+// => 0
+```
+
+## F. Counter Spawn
+
+This counter with tags is handy, but sometimes we don't want to give a string to
+every counter we want. Instead, let's write a function `spawnCounter()` that
+**returns a function**. Woah, yeah, we can do that. Functions are just stored in
+variables like everything else. Each function that it returns will have its own
+counter that it keeps track of, and when we call that function, it will return
+the number and increment it.
+
+```js
+var javaScript = spawnCounter();
+var coffeeScript = spawnCounter();
+var typeScript = spawnCounter();
+
+javaScript();
+// => 0
+coffeeScript();
+// => 0
+coffeeScript();
+// => 1
+javaScript();
+// => 1
+coffeeScript();
+// => 2
+typeScript();
+// => 0
+```
+
+## E. Async Counter
+
+We can take this just one step further by introducing an **asynchronous**
+component to the counter. In the async world, we create a **callback function**
+that we give to an asynchronous function. That function will call our callback
+when it has a result to return instead of returning it. This problem may feel a
+bit contrived, but the sentiment is the same as most asynchronous functions.
+We'll write a function `asyncCounter(fn)` that takes a callback function and
+again, returns a counter function. Each time that counter is called, the
+callback is called and passed the counter value.
+
+```js
+var callback = function(val){
+  console.log(val);
+};
+
+var counter = asyncCounter(callback);
+counter();
+// calls callback(0)
+counter();
+// calls callback(1)
+
+var other = asyncCounter(callback);
+other();
+// calls callback(0)
+```
