@@ -12,4 +12,9 @@ module.exports = {
   9: 'pick',
   a: 'merge',
   b: 'invert',
+
+  c: 'counter',
+  d: 'counterFor',
+  e: 'spawnCounter',
+  f: 'asyncCounter',
 };
