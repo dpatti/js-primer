@@ -13,6 +13,10 @@ it('ignores null and undefined values', function(){
   expect(invert({ hello: null, world: undefined })).to.eql({});
 });
 
+it('does not ignore empty strings', function(){
+  expect(invert({ hello: '' })).to.eql({ '': "hello" });
+});
+
 it('keeps the first key it inverts', function(){
   expect(invert({ a: "hello", b: "hello" })).to.eql({ hello: "a" });
 });
