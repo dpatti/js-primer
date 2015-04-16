@@ -244,11 +244,14 @@ counter();
 // => 3
 ```
 
-## D. Tagged Counter
+## D. Counter with tags
 
 We'll expand on the last question by adding the ability to give some string
 "tag" to our counter function. Each tag has its own counter that starts at 0.
-We'll call this `counterFor(str)`.
+We'll call this `counterFor(str)`. When you re-use the same tag, you get an
+incrementing counter for that tag. If you call the function with a new tag, that
+should start at 0. If you switch back to a previously-used tag, it should start
+where it left off.
 
 ```js
 counterFor("JavaScript");
@@ -265,10 +268,10 @@ counterFor("TypeScript");
 // => 0
 ```
 
-## F. Counter Spawn
+## F. Spawning counters
 
-This counter with tags is handy, but sometimes we don't want to give a string to
-every counter we want. Instead, let's write a function `spawnCounter()` that
+This counter with tags is handy, but sometimes we don't want to make up a string
+for every counter we want. Instead, let's write a function `spawnCounter()` that
 **returns a function**. Woah, yeah, we can do that. Functions are just stored in
 variables like everything else. Each function that it returns will have its own
 counter that it keeps track of, and when we call that function, it will return
@@ -293,16 +296,18 @@ typeScript();
 // => 0
 ```
 
-## E. Async Counter
+## E. "Asynchronous" counters
 
 We can take this just one step further by introducing an **asynchronous**
 component to the counter. In the async world, we create a **callback function**
 that we give to an asynchronous function. That function will call our callback
-when it has a result to return instead of returning it. This problem may feel a
-bit contrived, but the sentiment is the same as most asynchronous functions.
-We'll write a function `asyncCounter(fn)` that takes a callback function and
-again, returns a counter function. Each time that counter is called, the
-callback is called and passed the counter value.
+when it has a result to return instead of returning it. In this case, it's going
+to call our callback function multiple times. This problem may feel a bit
+contrived, but the sentiment is the same as most asynchronous functions.  We'll
+write a function `asyncCounter(fn)` that takes a callback function and, like
+before, returns a counter function. Each time that counter is called, the
+callback is called and passed the counter value. The counter function itself
+will return nothing.
 
 ```js
 var callback = function(val){
