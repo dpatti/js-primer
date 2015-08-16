@@ -268,7 +268,7 @@ counterFor("TypeScript");
 // => 0
 ```
 
-## F. Spawning counters
+## E. Spawning counters
 
 This counter with tags is handy, but sometimes we don't want to make up a string
 for every counter we want. Instead, let's write a function `spawnCounter()` that
@@ -296,7 +296,7 @@ typeScript();
 // => 0
 ```
 
-## E. "Asynchronous" counters
+## F. "Asynchronous" counters
 
 We can take this just one step further by introducing an **asynchronous**
 component to the counter. In the async world, we create a **callback function**
